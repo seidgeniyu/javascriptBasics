@@ -9,7 +9,7 @@ sports[1] = "swimming";
 console.log(sports[1]);
 
 //Create an array of numbers and print the sum of all elements using a loop:
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [10, 2, 35, 44, 52];
 let total = 0;
 
 for (let i = 0; i < numbers.length; i++) {
