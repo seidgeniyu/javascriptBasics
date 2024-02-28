@@ -1,3 +1,4 @@
+//Arrays are ordered collections of elements that can hold various data types in JavaScript. They are a fundamental data structure and provide an efficient way to store and manage lists of items.
 //Arrays
 //creating and accessing elements in array
 const computers = ["Apple", "HP", "Mac"];
