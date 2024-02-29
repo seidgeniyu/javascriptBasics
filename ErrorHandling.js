@@ -1,26 +1,21 @@
-//Error handling is a crucial aspect of writing robust JavaScript applications.
-//It allows you to gracefully manage unexpected occurrences (errors) within your code, preventing crashes and providing informative messages to you or the user.
-function getUserInput() {
-  const userInput = prompt("Enter your age:");
-  try {
-    const age = parseInt(userInput); // Attempt conversion to number
-    if (isNaN(age)) {
-      throw new TypeError("Invalid input: Please enter a number.");
-    }
-    if (age < 0) {
-      throw new RangeError("Invalid age: Age cannot be negative.");
-    }
-    return age;
-  } catch (error) {
-    console.error(error.message);
-    return null;
+function calculateSquareRoot(number) {
+  if (number < 0) {
+    throw new Error("Cannot calculate square root of a negative number!");
   }
+  return Math.sqrt(number);
 }
 
-const age = getUserInput();
+// Try-catch block to handle potential errors
+try {
+  const result = calculateSquareRoot(9);
+  console.log("Square root:", result);
+} catch (error) {
+  console.error("Error:", error.message);
+}
 
-if (age !== null) {
-  console.log(`Your age is: ${age}`);
-} else {
-  console.log("Invalid input. Please try again.");
+// Trying with a negative number (handled by the error)
+try {
+  calculateSquareRoot(-4); // This will throw an error
+} catch (error) {
+  console.error("Error:", error.message);
 }
