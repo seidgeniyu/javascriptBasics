@@ -1,4 +1,5 @@
-//Error handling is a crucial aspect of writing robust JavaScript applications. It allows you to gracefully manage unexpected occurrences (errors) within your code, preventing crashes and providing informative messages to you or the user.
+//Error handling is a crucial aspect of writing robust JavaScript applications.
+//It allows you to gracefully manage unexpected occurrences (errors) within your code, preventing crashes and providing informative messages to you or the user.
 function getUserInput() {
   const userInput = prompt("Enter your age:");
   try {
