@@ -13,7 +13,7 @@ function getUserInput() {
     return age;
   } catch (error) {
     console.error(error.message);
-    return null; // Indicate invalid input
+    return null;
   }
 }
 
