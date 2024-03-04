@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image Gallery</title>
+    <style>
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px auto;
+        }
+
+        .image-gallery img {
+            width: 200px;
+            height: 200px;
+            margin: 5px;
+            object-fit: cover; /* Maintain aspect ratio and scale to fit */
+        }
+
+        #caption {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* Initially hide the caption */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-gallery">
+        <img src="IMG/image1.jpg" alt="Car 1">
+        <img src="IMG/image2.jpg" alt="Car 2">
+        <img src="IMG/image3.jpg" alt="Car 3">
+    </div>
+    <p id="caption"></p>
+
+    <script>
+        const images = document.querySelectorAll('.image-gallery img');
+        const caption = document.getElementById('caption');
+
+        images.forEach(image => {
+            image.addEventListener('mouseover', function() {
+                const captionText = this.alt;
+                caption.textContent = captionText;
+                caption.style.display = 'block';
+                caption.style.left = event.clientX + 'px'; // Position caption near mouse
+                caption.style.top = event.clientY + 'px';
+            });
+
+            image.addEventListener('mouseout', function() {
+                caption.textContent = '';
+                caption.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
